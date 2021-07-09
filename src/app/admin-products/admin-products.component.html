@@ -1,0 +1,6 @@
+<button mat-raised-button color="primary" (click)="openDialog()">Add Pizza</button>
+<div class="item-container">
+    <div *ngFor="let item of pizza">
+        <app-admin-item [name]="item.pizzaName" [price]="item.price" [quantity]="item.quantity" [code]="item.code" (deleteCode)="onDelete($event)"></app-admin-item>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div>
+    <div class="add-title">
+      <h2 class="primary">Add Pizza</h2>
+    </div>
+    <div>
+      <form [formGroup]="addItemForm">
+        <mat-form-field>
+            <input matInput placeholder="Pizza Name" formControlName="pizzaName" required>
+            <mat-error *ngIf="addItemForm.controls.pizzaName.hasError('required')">
+              Please enter name
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput placeholder="Quantity" formControlName="quantity" required>
+            <mat-error *ngIf="addItemForm.controls.quantity.hasError('required')">
+              Please enter quantity
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput placeholder="Price" formControlName="price" required>
+            <mat-error *ngIf="addItemForm.controls.price.hasError('required')">
+              Please enter price
+            </mat-error>
+          </mat-form-field>
+
+          <div class="btn-sec">
+            <button mat-raised-button type="submit" color="primary" class="Update-btn" (click)="onaddPizza()" [disabled]="!addItemForm.valid">Save</button>
+            <button mat-raised-button type="button" class="Discard-btn" (click)="openDialog()">Cancel</button>
+          </div>
+      </form>
+    </div>
+  </div>
+  
