@@ -1,0 +1,6 @@
+<div class="item-container">
+    <div *ngFor="let item of pizza">
+        <app-store-item [name]="item.pizzaName" [price]="item.price" [quantity]="item.quantity" [code]="item.code" [cartQuantity]="item.cartQuantity"
+        (addToCart)="onAddToCart($event)" (removeFromCart)="onRemove($event)"></app-store-item>
+    </div>
+</div>
