@@ -1,0 +1,9 @@
+<div class="item-container">
+    <div *ngFor="let item of pizza">
+        <ng-container *ngIf="item.cartQuantity>0">
+        <app-checkout-item [name]="item.pizzaName" [price]="item.price" [cartQuantity]="item.cartQuantity" [code]="item.code"></app-checkout-item>
+    </ng-container>
+    </div>
+    <div *ngIf="totalCartValue === 0"> <h1>Cart is Empty</h1></div>
+</div>
+<h1>Total Cart value is {{totalCartValue}}</h1>
