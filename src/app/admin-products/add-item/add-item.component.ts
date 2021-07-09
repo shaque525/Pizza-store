@@ -19,7 +19,8 @@ export class AddItemComponent implements OnInit {
       code:null,
       pizzaName:'',
       price:'',
-      quantity:''
+      quantity:'',
+      cartQuantity:0
     })
   }
 
@@ -33,7 +34,7 @@ export class AddItemComponent implements OnInit {
 
   onaddPizza() {
     const pizzaAddData = this.addItemForm.value;
-    pizzaAddData.code = this.pizza.length + 110;
+    pizzaAddData.code = this.pizza.length  + 111;
     this.pizza.push(pizzaAddData);
     this.notificationService.showNotification('Pizza Added successfully');
     this.dialog.closeAll();
